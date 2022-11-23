@@ -10,9 +10,8 @@ bool ButtonDebounce();
 bool flag = 0;
 Ticker Five_ms;
 Timer t;
-DigitalIn Button(USER_BUTTON);
+DigitalIn Button(USER_BUTTON);    //PC_13
 Serial Comp(USBTX,USBRX);
-
 
 
 void DebounceCheck(void)
@@ -22,6 +21,7 @@ void DebounceCheck(void)
     if(State==0xf000) {
         flag = 1;
         Five_ms.detach();
+        
     }
 
 }
